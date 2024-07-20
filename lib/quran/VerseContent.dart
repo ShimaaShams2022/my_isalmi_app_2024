@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_islami_app_c11/quran/ChapterDetails.dart';
 
 class VerseContent extends StatelessWidget {
   VerseContent(this.index,this.content,{super.key});
