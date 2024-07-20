@@ -7,7 +7,6 @@ class ChapterTitle extends StatelessWidget {
    int index;
   String title;
 
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -18,9 +17,9 @@ class ChapterTitle extends StatelessWidget {
       },
       child: Text(title,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 25,)
       ),
-    );;
+    );
   }
 }
