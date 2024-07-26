@@ -4,7 +4,6 @@ import 'package:new_islami_app_c11/home/DefaultScreen.dart';
 import 'package:new_islami_app_c11/quran/QuranTab.dart';
 import 'package:new_islami_app_c11/radio/RadioTab.dart';
 import 'package:new_islami_app_c11/sepha/SephaTab.dart';
-import 'package:new_islami_app_c11/theme/MyTheme.dart';
 import 'package:new_islami_app_c11/home/ButtomNavItem.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,10 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             currentIndex: selectedIndex,
             items: [
-              ButtomNavItem( 'Quran','assets/images/ic_quran.png'),
-              ButtomNavItem( 'Al Ahadeth','assets/images/ic_hadeth.png'),
-              ButtomNavItem( 'Sebha','assets/images/ic_sebha.png'),
-              ButtomNavItem( 'Radio','assets/images/ic_radio.png'),
+              ButtonNavItem( 'Quran','assets/images/ic_quran.png'),
+              ButtonNavItem( 'Al Ahadeth','assets/images/ic_hadeth.png'),
+              ButtonNavItem( 'Sebha','assets/images/ic_sebha.png'),
+              ButtonNavItem( 'Radio','assets/images/ic_radio.png'),
             ],
           ),
           body: tabs[selectedIndex],
