@@ -14,11 +14,11 @@ class SephaTab extends StatefulWidget {
 
 class _TasbehTabState extends State<SephaTab> {
 
-  List<String> doaa = ['سبحان الله', 'الحمد لله', 'الله أكبر'];
+  List<String> allDoaa = ['سبحان الله', 'الحمد لله', 'الله أكبر'];
   String mydoaa = 'سبحان الله';
   int numberOfTasbe7 = 0;
-  double angle =(pi* 20)/180;
-  int i = 0;
+  double angleRotateSebha =(pi* 20)/180;
+  int counterForTasbeh = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,16 +35,16 @@ class _TasbehTabState extends State<SephaTab> {
                     width: 60,
                     height: 60,
                     child:
-                    Image(image: AssetImage('assets/images/head_seb7a.png'))
+                    Image(image: AssetImage('assets/images/headOfSebha.png'))
                 ),
                 Container(
                     padding: EdgeInsets.all(35),
                     width: 250,
                     height: 250,
                     child: Transform.rotate(
-                        angle: angle,
+                        angle: angleRotateSebha,
                         child: Image(
-                            image: AssetImage('assets/images/body_seb7a.png')))
+                            image: AssetImage('assets/images/bodyOfSebha.png')))
                 ),
               ]
           ),
@@ -67,7 +67,7 @@ class _TasbehTabState extends State<SephaTab> {
           ),
           ElevatedButton(
               onPressed: () {
-                onPress();
+                addOneTasbeh();
               },
               style: ElevatedButton.styleFrom(
                   padding:
@@ -86,25 +86,25 @@ class _TasbehTabState extends State<SephaTab> {
     );
   }
 
-  void onPress() {
+  void addOneTasbeh() {
 
     numberOfTasbe7++;
-    angle = angle + 0.1;
+    angleRotateSebha = angleRotateSebha + 0.1;
     setState(() {});
 
     if (numberOfTasbe7 == 33) {
       numberOfTasbe7 = 0;
-      i++;
+      counterForTasbeh++;
     }
-    if (i == 1) {
-      mydoaa = doaa[1];
+    if (counterForTasbeh == 1) {
+      mydoaa = allDoaa[1];
       setState(() {});
-    } else if (i == 2) {
-      mydoaa = doaa[2];
+    } else if (counterForTasbeh == 2) {
+      mydoaa = allDoaa[2];
       setState(() {});
-    } else if (i == 3) {
-      i = 0;
-      mydoaa = doaa[0];
+    } else if (counterForTasbeh == 3) {
+      counterForTasbeh = 0;
+      mydoaa = allDoaa[0];
       setState(() {});
     }
   }
