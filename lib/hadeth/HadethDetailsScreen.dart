@@ -13,10 +13,12 @@ class HadethDetailsScreen extends StatelessWidget {
     Hadeth hadeth=ModalRoute.of(context)?.settings.arguments as Hadeth;
     return   DefaultScreen(body:  Scaffold(
       appBar: AppBar(
-        title:Text(hadeth.hadethTitle),
+        title:Text(hadeth.hadethTitle,
+        style: Theme.of(context).textTheme.bodyLarge,
+        ),
       ),
       body: Card(
-          color: Colors.white,
+
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           elevation: 24,
           margin: const EdgeInsets.symmetric(vertical: 64,horizontal: 24),
@@ -28,9 +30,7 @@ class HadethDetailsScreen extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Text(hadeth.hadethContent,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 20
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                 ),
