@@ -37,7 +37,7 @@ class _HadethTabState extends State<HadethTab> {
        Padding(
         padding: EdgeInsets.symmetric(vertical: 8.0),
         child: Text(
-          'appTranslation(context).hadethNumber',
+          appTranslation(context).hadethNumber,
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
