@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:new_islami_app_c11/quran/ChapterTitle.dart';
 import 'package:new_islami_app_c11/theme/MyTheme.dart';
 
+import '../ui_utilities.dart';
+
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
 
@@ -126,25 +128,22 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/quran_header_image.png'),
+        Image.asset( getFullPathImage('quran_header_image.png')),
         Container(
           width: double.infinity,
           height: 2,
-          color: MyThemeData.lightPrimary,
+          color: Theme.of(context).dividerColor,
         ),
          Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-          child: Text('Names of Chapters',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w700
-            ),
+          child: Text('أسماء السور',
+            style:Theme.of(context).textTheme.titleMedium
           ),
         ),
         Container(
           width: double.infinity,
           height: 2,
-          color: MyThemeData.lightPrimary,
+          color:Theme.of(context).dividerColor,
         ),
         Expanded(
           child: ListView.separated(
@@ -155,7 +154,7 @@ class QuranTab extends StatelessWidget {
             separatorBuilder: (_, index) {
               return Container(
                 margin: EdgeInsets.symmetric(horizontal: 64),
-                color: MyThemeData.lightPrimary,
+                color: Theme.of(context).dividerColor,
                 width: double.infinity,
                 height: 2,
               );

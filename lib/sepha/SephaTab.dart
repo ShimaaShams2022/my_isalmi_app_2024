@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../theme/MyTheme.dart';
+import '../ui_utilities.dart';
 
 
 class SephaTab extends StatefulWidget {
@@ -26,7 +27,7 @@ class _TasbehTabState extends State<SephaTab> {
       alignment: Alignment.center,
       child: Column(
         children: [
-
+         SizedBox(height: 40,),
           Stack(
               children:[
                 Positioned(
@@ -35,7 +36,10 @@ class _TasbehTabState extends State<SephaTab> {
                     width: 60,
                     height: 60,
                     child:
-                    Image(image: AssetImage('assets/images/headOfSebha.png'))
+                    Image(image: AssetImage( getFullPathImage('headOfSebha.png')),
+                      color: Theme.of(context).colorScheme.secondary,
+
+                    )
                 ),
                 Container(
                     padding: EdgeInsets.all(35),
@@ -44,7 +48,9 @@ class _TasbehTabState extends State<SephaTab> {
                     child: Transform.rotate(
                         angle: angleRotateSebha,
                         child: Image(
-                            image: AssetImage('assets/images/bodyOfSebha.png')))
+                            image: AssetImage(getFullPathImage('bodyOfSebha.png')),
+                            color: Theme.of(context).colorScheme.secondary
+                        ))
                 ),
               ]
           ),
@@ -52,12 +58,11 @@ class _TasbehTabState extends State<SephaTab> {
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               child: Text('عدد التسبيحات',
-                  style: TextStyle(
-                    fontSize: 30,
-                  ))),
+                  style: Theme.of(context).textTheme.titleMedium
+              )),
           Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
+                  color: Theme.of(context).colorScheme.primary,
                   borderRadius: BorderRadius.circular(24)),
               padding: EdgeInsets.symmetric(horizontal: 25, vertical: 35),
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
@@ -72,15 +77,14 @@ class _TasbehTabState extends State<SephaTab> {
               style: ElevatedButton.styleFrom(
                   padding:
                   EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  backgroundColor: MyThemeData.lightPrimary,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24)) // background
               ),
               child: Text(mydoaa,
-                  style:TextStyle(
-                      fontSize: 30,
-                      color: Colors.black
-                  ) ))
+                  style:Theme.of(context).textTheme.bodyLarge?.apply(color:Theme.of(context).colorScheme.onSecondary ),
+
+              ))
         ],
       ),
     );
