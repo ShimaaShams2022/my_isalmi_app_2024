@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:new_islami_app_c11/appTranslation.dart';
 import 'package:new_islami_app_c11/hadeth/Hadethtab.dart';
 import 'package:new_islami_app_c11/home/DefaultScreen.dart';
 import 'package:new_islami_app_c11/quran/QuranTab.dart';
 import 'package:new_islami_app_c11/radio/RadioTab.dart';
 import 'package:new_islami_app_c11/sepha/SephaTab.dart';
 import 'package:new_islami_app_c11/home/ButtomNavItem.dart';
+
 
 class HomeScreen extends StatefulWidget {
    HomeScreen({super.key});
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            title: const Text('Islami'),
+            title: Text(appTranslation(context).appTitle),
           ),
           bottomNavigationBar: BottomNavigationBar(
             onTap: (index){
@@ -35,10 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             currentIndex: selectedIndex,
             items: [
-              ButtonNavItem( 'Quran','assets/images/ic_quran.png'),
-              ButtonNavItem( 'Al Ahadeth','assets/images/ic_hadeth.png'),
-              ButtonNavItem( 'Sebha','assets/images/ic_sebha.png'),
-              ButtonNavItem( 'Radio','assets/images/ic_radio.png'),
+              ButtonNavItem(appTranslation(context).quranTab,'assets/images/ic_quran.png'),
+              ButtonNavItem( appTranslation(context).hadethTab,'assets/images/ic_hadeth.png'),
+              ButtonNavItem(appTranslation(context).tasbehTab,'assets/images/ic_sebha.png'),
+              ButtonNavItem( appTranslation(context).radioTab,'assets/images/ic_radio.png'),
             ],
           ),
           body: tabs[selectedIndex],

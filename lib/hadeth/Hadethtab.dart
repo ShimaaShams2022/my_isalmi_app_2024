@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:new_islami_app_c11/hadeth/HadethTitle.dart';
 import 'package:new_islami_app_c11/theme/MyTheme.dart';
 
+
+import '../appTranslation.dart';
+
 class HadethTab extends StatefulWidget {
   HadethTab({super.key});
 
@@ -29,10 +32,10 @@ class _HadethTabState extends State<HadethTab> {
         height: 2,
         color: MyThemeData.lightPrimary,
       ),
-      const Padding(
+       Padding(
         padding: EdgeInsets.symmetric(vertical: 8.0),
         child: Text(
-          'Al Ahadeth',
+          appTranslation(context).hadethNumber,
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
         ),
       ),
