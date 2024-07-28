@@ -3,6 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:new_islami_app_c11/hadeth/HadethTitle.dart';
 import 'package:new_islami_app_c11/theme/MyTheme.dart';
 
+import '../ui_utilities.dart';
+
+
+import '../appTranslation.dart';
+
 class HadethTab extends StatefulWidget {
   HadethTab({super.key});
 
@@ -23,23 +28,23 @@ class _HadethTabState extends State<HadethTab> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Image.asset('assets/images/basmala.png'),
+      Image.asset( getFullPathImage('basmala.png')),
       Container(
         width: double.infinity,
         height: 2,
-        color: MyThemeData.lightPrimary,
+        color: Theme.of(context).dividerColor,
       ),
-      const Padding(
+       Padding(
         padding: EdgeInsets.symmetric(vertical: 8.0),
         child: Text(
-          'Al Ahadeth',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+          appTranslation(context).hadethNumber,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       Container(
         width: double.infinity,
         height: 2,
-        color: MyThemeData.lightPrimary,
+        color:Theme.of(context).dividerColor,
       ),
       Expanded(
           child: allHadeth.isEmpty
@@ -51,7 +56,7 @@ class _HadethTabState extends State<HadethTab> {
                   itemCount: allHadeth.length,
                   separatorBuilder: (context, int index) => Container(
                     height: 1,
-                    color: MyThemeData.lightPrimary,
+                    color: Theme.of(context).dividerColor,
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 64),
                   ),
