@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_islami_app_c11/appTranslation.dart';
 import 'package:new_islami_app_c11/hadeth/Hadethtab.dart';
 import 'package:new_islami_app_c11/home/DefaultScreen.dart';
 import 'package:new_islami_app_c11/quran/QuranTab.dart';
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text('إسلامي',
+          title: Text(appTranslation(context).appTitle,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
@@ -39,13 +40,13 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           currentIndex: selectedIndex,
           items: [
-            ButtonNavItem('Quran', getFullPathImage('ic_quran.png'),
+            ButtonNavItem(appTranslation(context).quranTab, getFullPathImage('ic_quran.png'),
             Theme.of(context).colorScheme.primary),
-            ButtonNavItem('Al Ahadeth',  getFullPathImage('ic_hadeth.png'),
+            ButtonNavItem(appTranslation(context).hadethTab,  getFullPathImage('ic_hadeth.png'),
                 Theme.of(context).colorScheme.primary),
-            ButtonNavItem('Sebha',  getFullPathImage('ic_sebha.png'),
+            ButtonNavItem(appTranslation(context).tasbehTab,  getFullPathImage('ic_sebha.png'),
                 Theme.of(context).colorScheme.primary),
-            ButtonNavItem('Radio',  getFullPathImage('ic_radio.png'),
+            ButtonNavItem(appTranslation(context).radioTab,  getFullPathImage('ic_radio.png'),
                 Theme.of(context).colorScheme.primary),
           ],
         ),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:new_islami_app_c11/hadeth/HadethDetailsScreen.dart';
 import 'package:new_islami_app_c11/quran/ChapterDetails.dart';
 import 'package:new_islami_app_c11/theme/MyTheme.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'home/HomeScreen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +29,12 @@ class MyApp extends StatelessWidget {
       darkTheme: MyThemeData.darkTheme,
       themeMode: ThemeMode.dark,
 
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale('ar'),
+
     );
   }
 }
+
+

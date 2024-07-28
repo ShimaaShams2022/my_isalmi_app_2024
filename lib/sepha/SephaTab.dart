@@ -1,7 +1,9 @@
 import 'dart:math';
 
+
 import 'package:flutter/material.dart';
 
+import '../appTranslation.dart';
 import '../theme/MyTheme.dart';
 import '../ui_utilities.dart';
 
@@ -57,7 +59,7 @@ class _TasbehTabState extends State<SephaTab> {
           Container(
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              child: Text('عدد التسبيحات',
+              child: Text(appTranslation(context).noOfTasbeh,
                   style: Theme.of(context).textTheme.titleMedium
               )),
           Container(
