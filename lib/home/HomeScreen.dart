@@ -6,10 +6,11 @@ import 'package:new_islami_app_c11/quran/QuranTab.dart';
 import 'package:new_islami_app_c11/radio/RadioTab.dart';
 import 'package:new_islami_app_c11/sepha/SephaTab.dart';
 import 'package:new_islami_app_c11/home/ButtomNavItem.dart';
-
+import 'package:new_islami_app_c11/theme/MyTheme.dart';
+import 'package:new_islami_app_c11/ui_utilities.dart';
 
 class HomeScreen extends StatefulWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   static const String routeName = 'HomeScreen';
 
@@ -18,35 +19,41 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex=0;
+  int selectedIndex = 0;
 
   //'assets/images/background_pattern.png',
   @override
   Widget build(BuildContext context) {
-    return DefaultScreen(body:
-              Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Text(appTranslation(context).appTitle),
+    return DefaultScreen(
+      body: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Text(appTranslation(context).appTitle,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            onTap: (index){
-              setState(() {
-                selectedIndex=index;
-              });
-            },
-            currentIndex: selectedIndex,
-            items: [
-              ButtonNavItem(appTranslation(context).quranTab,'assets/images/ic_quran.png'),
-              ButtonNavItem( appTranslation(context).hadethTab,'assets/images/ic_hadeth.png'),
-              ButtonNavItem(appTranslation(context).tasbehTab,'assets/images/ic_sebha.png'),
-              ButtonNavItem( appTranslation(context).radioTab,'assets/images/ic_radio.png'),
-            ],
-          ),
-          body: tabs[selectedIndex],
         ),
-
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          currentIndex: selectedIndex,
+          items: [
+            ButtonNavItem(appTranslation(context).quranTab, getFullPathImage('ic_quran.png'),
+            Theme.of(context).colorScheme.primary),
+            ButtonNavItem(appTranslation(context).hadethTab,  getFullPathImage('ic_hadeth.png'),
+                Theme.of(context).colorScheme.primary),
+            ButtonNavItem(appTranslation(context).tasbehTab,  getFullPathImage('ic_sebha.png'),
+                Theme.of(context).colorScheme.primary),
+            ButtonNavItem(appTranslation(context).radioTab,  getFullPathImage('ic_radio.png'),
+                Theme.of(context).colorScheme.primary),
+          ],
+        ),
+        body: tabs[selectedIndex],
+      ),
     );
   }
-  var tabs=[QuranTab(),HadethTab(),SephaTab(),RadioTab()];
+
+  var tabs = [QuranTab(), HadethTab(), SephaTab(), RadioTab()];
 }

@@ -30,10 +30,12 @@ class _ChapterDetailsState extends State<ChapterDetails> {
 
     return DefaultScreen(body:  Scaffold(
       appBar: AppBar(
-        title:Text(arg.chapterName),
+        title:Text(arg.chapterName,
+        style: Theme.of(context).textTheme.bodyLarge
+          ,),
       ),
       body: Card(
-        color: Colors.white,
+
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         elevation: 24,
         margin: const EdgeInsets.symmetric(vertical: 64,horizontal: 24),
@@ -46,7 +48,7 @@ class _ChapterDetailsState extends State<ChapterDetails> {
           separatorBuilder: (BuildContext context, int index)=>
           Container(
             height: 1,
-            color: MyThemeData.lightPrimary,
+            color: Theme.of(context).dividerColor,
             width: double.infinity,
             margin: EdgeInsets.symmetric(horizontal: 64),
           ),

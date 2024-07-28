@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget {
 
         },
       theme:MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.dark,
 
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
