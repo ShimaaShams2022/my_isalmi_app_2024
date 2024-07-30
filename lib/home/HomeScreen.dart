@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:new_islami_app_c11/appTranslation.dart';
 import 'package:new_islami_app_c11/hadeth/Hadethtab.dart';
 import 'package:new_islami_app_c11/home/DefaultScreen.dart';
 import 'package:new_islami_app_c11/quran/QuranTab.dart';
 import 'package:new_islami_app_c11/radio/RadioTab.dart';
 import 'package:new_islami_app_c11/sepha/SephaTab.dart';
-import 'package:new_islami_app_c11/home/ButtomNavItem.dart';
-import 'package:new_islami_app_c11/theme/MyTheme.dart';
+import 'package:new_islami_app_c11/home/BottomNavigationItem.dart';
 import 'package:new_islami_app_c11/ui_utilities.dart';
+import 'package:new_islami_app_c11/setting/settingTab.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -28,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text(appTranslation(context).appTitle,
+          title: Text(getTranslation(context).appTitle,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
@@ -40,14 +39,20 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           currentIndex: selectedIndex,
           items: [
-            ButtonNavItem(appTranslation(context).quranTab, getFullPathImage('ic_quran.png'),
+            BottomNavigationItem(getTranslation(context).quranTab, getFullPathImage('ic_quran.png'),
             Theme.of(context).colorScheme.primary),
-            ButtonNavItem(appTranslation(context).hadethTab,  getFullPathImage('ic_hadeth.png'),
+            BottomNavigationItem(getTranslation(context).hadethTab,  getFullPathImage('ic_hadeth.png'),
                 Theme.of(context).colorScheme.primary),
-            ButtonNavItem(appTranslation(context).tasbehTab,  getFullPathImage('ic_sebha.png'),
+            BottomNavigationItem(getTranslation(context).tasbehTab,  getFullPathImage('ic_sebha.png'),
                 Theme.of(context).colorScheme.primary),
-            ButtonNavItem(appTranslation(context).radioTab,  getFullPathImage('ic_radio.png'),
+            BottomNavigationItem(getTranslation(context).radioTab,  getFullPathImage('ic_radio.png'),
                 Theme.of(context).colorScheme.primary),
+            BottomNavigationBarItem(
+              backgroundColor:Theme.of(context).colorScheme.primary ,
+              label: getTranslation(context).settingTab,
+                icon: const Icon(Icons.settings)
+            )
+
           ],
         ),
         body: tabs[selectedIndex],
@@ -55,5 +60,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  var tabs = [QuranTab(), HadethTab(), SephaTab(), RadioTab()];
+  var tabs = [QuranTab(), HadethTab(), SephaTab(), RadioTab(),SettingTab()];
 }
