@@ -6,5 +6,12 @@
   "radioTab": "إذاعة",
   "tasbehTab": "ذكر",
   "hadethNumber": "رقم الحديث",
-  "noOfTasbeh": "عدد التسبيحات"
+  "noOfTasbeh": "عدد التسبيحات",
+  "settingTab": "إعدادات",
+  "language": "اللغة",
+  "theme": "المظهر",
+  "dark": "ليلي",
+  "light": "نهاري",
+  "english": "اللغة الإنجليزية",
+  "arabic": "اللغة العربية"
 }

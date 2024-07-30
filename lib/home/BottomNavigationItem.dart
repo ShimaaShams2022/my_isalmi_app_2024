@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_islami_app_c11/theme/MyTheme.dart';
 
-
-class ButtonNavItem extends BottomNavigationBarItem {
-   ButtonNavItem(
+class BottomNavigationItem extends BottomNavigationBarItem {
+   BottomNavigationItem(
        String title,
        String iconPath,
        Color backGroundColor,

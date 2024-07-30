@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_islami_app_c11/quran/ChapterTitle.dart';
-import 'package:new_islami_app_c11/theme/MyTheme.dart';
-
 import '../ui_utilities.dart';
-
-
-import '../appTranslation.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -139,7 +134,7 @@ class QuranTab extends StatelessWidget {
         ),
          Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(appTranslation(context).chapterTitle,
+          child: Text(getTranslation(context).chapterTitle,
             style:Theme.of(context).textTheme.titleMedium
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_islami_app_c11/theme/MyTheme.dart';
+import 'package:new_islami_app_c11/providers/ThemeProvider.dart';
 import 'package:new_islami_app_c11/ui_utilities.dart';
+import 'package:provider/provider.dart';
 
 class DefaultScreen extends StatelessWidget {
    DefaultScreen({required this.body,super.key});
@@ -10,7 +11,9 @@ class DefaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDark=MyThemeData.isDark;
+
+    ThemeProvider provider = Provider.of<ThemeProvider>(context);
+    bool isDark=provider.isDarkEnabled();
     return Stack(
         children: [
           Image.asset(
