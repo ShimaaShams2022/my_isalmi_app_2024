@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:new_islami_app_c11/home/DefaultScreen.dart';
 import 'package:new_islami_app_c11/quran/VerseContent.dart';
-import 'package:new_islami_app_c11/theme/MyTheme.dart';
+
 
 
 
@@ -50,7 +50,7 @@ class _ChapterDetailsState extends State<ChapterDetails> {
             height: 1,
             color: Theme.of(context).dividerColor,
             width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 64),
+            margin: const EdgeInsets.symmetric(horizontal: 64),
           ),
 
         )

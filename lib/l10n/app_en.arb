@@ -6,5 +6,12 @@
   "radioTab": "Radio",
   "tasbehTab": "Mention",
   "hadethNumber": "Hadeth Number",
-  "noOfTasbeh": "Numbers of tasbeh"
+  "noOfTasbeh": "Numbers of tasbeh",
+  "settingTab": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light",
+  "english": "English",
+  "arabic": "Arabic"
 }
