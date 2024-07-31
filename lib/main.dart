@@ -6,13 +6,17 @@ import 'package:new_islami_app_c11/providers/ThemeProvider.dart';
 import 'package:new_islami_app_c11/quran/ChapterDetails.dart';
 import 'package:new_islami_app_c11/theme/MyTheme.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'home/HomeScreen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+void main()async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  var sharedPreferences= await SharedPreferences.getInstance();
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_) => ThemeProvider()),
-    ChangeNotifierProvider(create: (_) => LocaleProvider()),
+    ChangeNotifierProvider(create: (_) => ThemeProvider(sharedPreferences)),
+    ChangeNotifierProvider(create: (_) => LocaleProvider(sharedPreferences)),
   ], child: const MyApp()));
 }
 
